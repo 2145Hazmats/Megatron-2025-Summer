@@ -16,4 +16,14 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
+
+  public static class DriveTrainConstants {
+  
+    
+  }
+
+  public static class GroundIntakeConstants {
+    public static final double IntakeSpeed = 0.4;
+    
+  }
 }

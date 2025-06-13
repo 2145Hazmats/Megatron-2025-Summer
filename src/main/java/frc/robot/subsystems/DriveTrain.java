@@ -6,11 +6,29 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.DriveTrainConstants;
+import com.pathplanner.lib.auto.AutoBuilder;
 
-public class ExampleSubsystem extends SubsystemBase {
+public class DriveTrain extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
-  public ExampleSubsystem() {}
+  public DriveTrain(
+    DriveTrainConstants drivetrainConstants
+) {
 
+    configureAutoBuilder();
+
+    SignalLogger.setPath("/home/lvuser/logs");
+    //SignalLogger.start();
+
+    pidFaceRad.enableContinuousInput(-Math.PI, Math.PI);
+}
+public void startLogging() {
+  SignalLogger.start();
+}
+
+public void stopLogging() {
+  SignalLogger.stop();
+}
   /**
    * Example command factory method.
    *
